@@ -1,0 +1,21 @@
+{
+  "name": "await-input",
+  "version": "0.1.0",
+  "description": "Simple client for HTTP JSON APIs",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/teifip/await-input.git"
+  },
+  "keywords": [
+    "readline",
+    "password",
+    "mask"
+  ],
+  "bugs": {
+    "url": "https://github.com/teifip/await-input/issues"
+  },
+  "homepage": "https://github.com/teifip/await-input#readme",
+  "author": "Paolo Fiorini <teifip@gmail.com>",
+  "license": "MIT"
+}
