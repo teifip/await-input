@@ -1,6 +1,6 @@
 # await-input
 
-Trivial function that modifies [rl.question()](https://nodejs.org/dist/latest-v8.x/docs/api/readline.html#readline_rl_question_query_callback) to make it usable in async functions and optionally mask the inout text (e.g. for passwords).
+Trivial function that modifies [rl.question()](https://nodejs.org/dist/latest-v8.x/docs/api/readline.html#readline_rl_question_query_callback) to make it usable in async functions, and optionally mask the user input (e.g. for passwords).
 
 ### Overview
 
@@ -8,7 +8,6 @@ Trivial function that modifies [rl.question()](https://nodejs.org/dist/latest-v8
 const awaitInput = require('await-input');
 
 async function getUserInputs() {
-
   let username = await awaitInput('Username: ', false);
   // User input is displayed while typing
 
@@ -28,14 +27,14 @@ awaitInput('Username: ', false, (username) => {
 
 ### Installation
 
-This is too trivial to publish to npm. Just download `index.js` for your use or copy/paste the code.
+This is too trivial to publish to [npm](https://www.npmjs.com/). Just download `index.js` for your use, or copy/paste the code at your convenience.
 
 ### Usage
 
 **awaitInput(question, maskInput[, callback])**
 
-`question` is the string used to prompt the user. In most of the cases you will want it to end with a blank, so that the input cursor is nicely placed at one column distance from the prompt.
+`question` is the string used to prompt the user. In most of the cases you may want it to end with a blank, so that the input cursor is nicely placed at one column distance from the prompt.
 
-`maskInput` is the boolean that control whether the user input is masked with asterisks or not.
+`maskInput` is the boolean that controls whether the user input is masked with asterisks or not.
 
-`callback` is the optional callback. When specified, it is invoked with the user input as only argument (i.e. never returns an error). When `callback` is not specified a promise is returned. The promise is never rejected.
+`callback` is the optional callback. When specified, it is invoked with the user input as the only argument (i.e. never returns an error). When `callback` is not specified a promise is returned. The promise is never rejected.

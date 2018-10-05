@@ -1,6 +1,5 @@
 const readline = require('readline');
 
-
 function getInput(question, hideAnswer, callback) {
   let rl = readline.createInterface({
     input: process.stdin,
@@ -21,7 +20,6 @@ function getInput(question, hideAnswer, callback) {
     }
   };
 }
-
 
 module.exports = (question, hideAnswer, callback) => {
   if (typeof callback === 'function') {
