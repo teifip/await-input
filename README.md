@@ -8,7 +8,7 @@ Trivial function that modifies [rl.question()](https://nodejs.org/dist/latest-v8
 const awaitInput = require('await-input');
 
 async function getUserInputs() {
-  let username = await awaitInput('Username: ', false);
+  let username = await awaitInput('Username: ');
   // User input is displayed while typing
 
   let password = await awaitInput('Password: ', true);
@@ -16,12 +16,11 @@ async function getUserInputs() {
 }
 ```
 
-Alternatively, the function can be invoked with a callback:
+Alternatively:
 
 ```javascript
-awaitInput('Username: ', false, (username) => {
-  console.log(username);
-  // It's your choice if you want to trim the input
+awaitInput('Username: ').then((username) => {
+  // The promise is never rejected
 });
 ```
 
@@ -31,10 +30,8 @@ This is too trivial to publish to [npm](https://www.npmjs.com/). Just download `
 
 ### Usage
 
-**awaitInput(question, maskInput[, callback])**
+**awaitInput(question[, maskInput])**
 
 `question` is the string used to prompt the user. In most of the cases you may want it to end with a blank, so that the input cursor is nicely placed at one column distance from the prompt.
 
-`maskInput` is the boolean that controls whether the user input is masked with asterisks or not.
-
-`callback` is the optional callback. When specified, it is invoked with the user input as the only argument (i.e. never returns an error). When `callback` is not specified a promise is returned. The promise is never rejected.
+`maskInput` is the boolean that controls whether the user input is masked with asterisks or not. Default value is `false`.

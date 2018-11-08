@@ -1,6 +1,6 @@
 {
   "name": "await-input",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Simple client for HTTP JSON APIs",
   "main": "index.js",
   "repository": {
